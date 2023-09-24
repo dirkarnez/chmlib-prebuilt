@@ -52,6 +52,13 @@ jobs:
           dir &&^
           "${{ github.workspace }}\PortableGit-2.38.1-64-bit\usr\bin\sed.exe" -i "s/clang_rel_one/gcc_rel/g" build.sh &&^
           type build.sh
+
+      - shell: cmd
+        run: |
+          cd chmlib &&^
+          dir &&^
+          "${{ github.workspace }}\PortableGit-2.38.1-64-bit\usr\bin\sed.exe" -i "s/\$CC\s\+-o\s\+\$OUT\/chm_http\s\+\$CFLAGS\s\+\$CHM_SRCS\s\+tools\/chm_http\.c/#\$CC -o \$OUT\/chm_http \$CFLAGS \$CHM_SRCS tools\/chm_http\.c/g" build_common.sh &&^
+          type build_common.sh
            
       - name: curl cmake-3.24.0-windows-x86_64.zip
         shell: cmd
