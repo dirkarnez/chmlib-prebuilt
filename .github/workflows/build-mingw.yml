@@ -41,10 +41,10 @@ jobs:
        
       - shell: cmd
         run: |
-         cd chmlib &&^
-         dir &&^
-         "${{ github.workspace }}\PortableGit-2.38.1-64-bit\usr\bin\sed.exe" -i "s/CC=gcc-5/CC=gcc/" build_common.sh &&^
-         type build_common.sh
+          cd chmlib &&^
+          dir &&^
+          "${{ github.workspace }}\PortableGit-2.38.1-64-bit\usr\bin\sed.exe" -i "s/CC=gcc-5/CC=gcc/g" build_common.sh &&^
+          type build_common.sh
            
       - name: curl cmake-3.24.0-windows-x86_64.zip
         shell: cmd
@@ -57,7 +57,7 @@ jobs:
             export PATH="$workspace/mingw64:$workspace/mingw64/bin:$workspace/msys64/usr/bin:/usr/bin" &&
             cd chmlib && 
             g++ --version &&
-            ./build &&
+            ./build.sh &&
             ls
             
       - name: Archive Release
