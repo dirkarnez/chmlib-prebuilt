@@ -50,7 +50,7 @@ jobs:
         run: |
           cd chmlib &&^
           dir &&^
-          "${{ github.workspace }}\PortableGit-2.38.1-64-bit\usr\bin\sed.exe" -i "s/clang_rel/gcc_rel/g" build.sh &&^
+          "${{ github.workspace }}\PortableGit-2.38.1-64-bit\usr\bin\sed.exe" -i "s/clang_rel_one/gcc_rel/g" build.sh &&^
           type build.sh
            
       - name: curl cmake-3.24.0-windows-x86_64.zip
