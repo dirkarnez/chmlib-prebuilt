@@ -78,12 +78,12 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "chmlib/obj/gcc/rel/${{ env.installationPath }}"
+          directory: "chmlib/obj/gcc/rel"
           filename: "${{ env.mingwTargetZip }}"
         
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "chmlib/obj/gcc/rel/${{ env.installationPath }}/${{ env.mingwTargetZip }}"
+          artifacts: "chmlib/obj/gcc/rel/${{ env.mingwTargetZip }}"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
